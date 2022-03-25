@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:context=".GpaCalcActivity"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/bar_layout" />
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/bar"
+            android:id="@+id/editTxtLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/subName"
+                android:layout_width="85dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:hint="اسم المادة"
+                android:textSize="18sp"
+                android:maxLength="50"/>
+
+            <EditText
+                android:id="@+id/hours"
+                android:layout_width="85dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:hint="عدد الساعات"
+                android:inputType="number"
+                android:textSize="18sp"
+                android:maxLength="3"/>
+
+            <Spinner
+                android:id="@+id/gradesList"
+                android:layout_width="85dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:entries="@array/grades_list"
+                android:prompt="@string/grades_list_name"
+                android:spinnerMode="dropdown"
+                android:textAlignment="textEnd"
+                android:textDirection="ltr"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/addBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="#198754"
+                android:text="+"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/editTxtLayout"
+            android:id="@+id/txtForSubject"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="اسم المادة"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="عدد الساعات"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:textAlignment="center"
+                android:textDirection="rtl"
+                android:text="التقدير"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/enteredGradesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/txtForSubject"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:id="@+id/wantCalcCGpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enteredGradesLayout"
+            android:layout_toRightOf="@+id/isCGpa"
+            android:text="احسب التراكمى؟"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <Switch
+            android:id="@+id/isCGpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enteredGradesLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="195dp"
+            android:textOff="لا"
+            android:textOn="اة"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/oldGpaHours"
+            android:layout_width="138dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/isCGpa"
+            android:layout_marginRight="15dp"
+            android:hint="عدد ساعات التراكمى"
+            android:inputType="number"
+            android:visibility="gone"
+            android:maxLength="3"/>
+
+        <EditText
+            android:id="@+id/oldGpa"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/isCGpa"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/oldGpaHours"
+            android:hint="GPA التراكمى"
+            android:inputType="numberDecimal"
+            android:visibility="gone"
+            android:maxLength="5"/>
+
+        <Button
+            android:id="@+id/calculateGPA"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/isCGpa"
+            android:layout_toLeftOf="@+id/oldGpa"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="#0EADF5"
+            android:text="احسب"
+            android:layout_alignParentLeft="true"
+            android:textAlignment="center"
+            android:visibility="gone" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="93dp"
+            android:layout_below="@id/calculateGPA"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="80dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="1"
+            android:columnOrderPreserved="false"
+            android:rowCount="1"
+            android:visibility="invisible">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textAlignment="center"
+                        android:id="@+id/semsterGpa"
+                        android:textColor="#6F6F6F"
+                        android:textSize="18sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:id="@+id/cGpa"
+                        android:layout_marginTop="5dp"
+                        android:textAlignment="center"
+                        android:textColor="#6F6F6F"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+    </RelativeLayout>
+</ScrollView>
