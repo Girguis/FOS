@@ -1,6 +1,8 @@
 package com.example.facultyofscience;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -30,36 +32,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
         public void onClick(View v) {
-            if(v.getId()==R.id.gpaCalc)
+            if(!isInternetConnectionWorking() &&v.getId()!=R.id.gpaCalc&&v.getId()!=R.id.fbPage)
             {
-                intent=new Intent(this, GpaCalcActivity.class);
+                intent=new Intent(this,NoInternetConnectionActivity.class);
                 startActivity(intent);
             }
-            else if(v.getId()==R.id.fbPage)
-            {
-                try {
-                    intent= new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/672109416181270/"));
+            else {
+                if (v.getId() == R.id.gpaCalc) {
+                    intent = new Intent(this, GpaCalcActivity.class);
                     startActivity(intent);
-                }catch (Exception ex)
-                {
-                    intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/FacultyofScienceASU"));
+                } else if (v.getId() == R.id.fbPage) {
+                    try {
+                        intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/672109416181270/"));
+                        startActivity(intent);
+                    } catch (Exception ex) {
+                        intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/FacultyofScienceASU"));
+                        startActivity(intent);
+                    }
+                } else if (v.getId() == R.id.newsPage) {
+                    intent = new Intent(this, NewsActivity.class);
+                    startActivity(intent);
+                } else if (v.getId() == R.id.eventsPage) {
+                    intent = new Intent(this, EventsActivity.class);
+                    startActivity(intent);
+                } else if (v.getId() == R.id.announPage) {
+                    intent = new Intent(this, AnnouncementsActivity.class);
                     startActivity(intent);
                 }
             }
-            else if(v.getId()==R.id.newsPage)
-            {
-                intent=new Intent(this, NewsActivity.class);
-                startActivity(intent);
-            }
-            else if(v.getId()==R.id.eventsPage)
-            {
-                intent=new Intent(this, EventsActivity.class);
-                startActivity(intent);
-            }
-            else if(v.getId()==R.id.announPage)
-            {
-                intent=new Intent(this, AnnouncementsActivity.class);
-                startActivity(intent);
-            }
+        }
+        private boolean isInternetConnectionWorking()
+        {
+            ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(this.CONNECTIVITY_SERVICE);
+            if(connectivityManager.getNetworkInfo(
+                    ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                    connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED)
+             return true;
+            else
+                return false;
         }
 }

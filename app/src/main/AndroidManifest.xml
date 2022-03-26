@@ -3,6 +3,8 @@
     package="com.example.facultyofscience">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,9 @@
         android:roundIcon="@mipmap/facultylogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FacultyOfScience">
+        <activity
+            android:name=".NoInternetConnectionActivity"
+            android:exported="false" />
         <activity
             android:name=".AnnnouncementsDetailsActivity"
             android:exported="false" />
