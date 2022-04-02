@@ -11,10 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.facultyofscience.AnnnouncementsDetailsActivity;
-import com.example.facultyofscience.EventsDetailsActivity;
+import com.example.facultyofscience.AnnouncementsDetailsActivity;
 import com.example.facultyofscience.Models.Announcements;
-import com.example.facultyofscience.Models.Events;
 import com.example.facultyofscience.R;
 import com.squareup.picasso.Picasso;
 
@@ -24,7 +22,7 @@ public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdap
     ArrayList<Announcements> announcements;
     private Context context;
 
-    public AnnouncementsAdapter(Context context,ArrayList<Announcements> announcements) {
+    public AnnouncementsAdapter(Context context, ArrayList<Announcements> announcements) {
         this.announcements = announcements;
         this.context = context;
     }
@@ -32,7 +30,7 @@ public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdap
     @NonNull
     @Override
     public AnnouncementsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.announcements_item,viewGroup,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.announcements_item, viewGroup, false);
         return new AnnouncementsAdapter.ViewHolder(view);
     }
 
@@ -45,33 +43,34 @@ public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdap
     public int getItemCount() {
         return announcements.size();
     }
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
-    {
+
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imageView;
         TextView titleView;
         private View announItem;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            announItem=itemView;
+            announItem = itemView;
             announItem.setOnClickListener(this);
         }
-        public void bind(Announcements events)
-        {
-            titleView=announItem.findViewById(R.id.titleView);
+
+        public void bind(Announcements events) {
+            titleView = announItem.findViewById(R.id.titleView);
             titleView.setText(events.getTitle());
-            imageView =announItem.findViewById(R.id.imageView);
+            imageView = announItem.findViewById(R.id.imageView);
             imageView.setOnClickListener(this);
             Picasso.get().load(events.getImgUrl()).into(imageView);
         }
 
         @Override
         public void onClick(View view) {
-            int indx=getBindingAdapterPosition();
-            Announcements forDetails =announcements.get(indx);
-            Intent intent=new Intent(context, AnnnouncementsDetailsActivity.class);
-            intent.putExtra("title",forDetails.getTitle());
-            intent.putExtra("imgUrl",forDetails.getImgUrl());
-            intent.putExtra("detailsUrl",forDetails.getDetailsUrl());
+            int indx = getBindingAdapterPosition();
+            Announcements forDetails = announcements.get(indx);
+            Intent intent = new Intent(context, AnnouncementsDetailsActivity.class);
+            intent.putExtra("title", forDetails.getTitle());
+            intent.putExtra("imgUrl", forDetails.getImgUrl());
+            intent.putExtra("detailsUrl", forDetails.getDetailsUrl());
             context.startActivity(intent);
         }
     }

@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/facultylogo"
@@ -13,11 +12,12 @@
         android:roundIcon="@mipmap/facultylogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FacultyOfScience">
+
         <activity
             android:name=".NoInternetConnectionActivity"
             android:exported="false" />
         <activity
-            android:name=".AnnnouncementsDetailsActivity"
+            android:name=".AnnouncementsDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".AnnouncementsActivity"
@@ -47,6 +47,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".Notifications.BackgroundService"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="BackgroundService"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

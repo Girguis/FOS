@@ -2,7 +2,7 @@ package com.example.facultyofscience.Models;
 
 public class SubjectGrade {
     private int hours;
-    private String grade,name;
+    private String grade, name;
 
     public SubjectGrade(int hours, String grade, String name) {
         this.hours = hours;
@@ -27,7 +27,7 @@ public class SubjectGrade {
     }
 
     public String getName() {
-        return name.isEmpty()?"مادة":name;
+        return name.isEmpty() ? "مادة" : name;
     }
 
     public void setName(String name) {

@@ -1,7 +1,8 @@
 package com.example.facultyofscience.Models;
 
 public class News {
-    private String title,imgUrl,Date,detailsUrl;
+    private String title, imgUrl, Date, detailsUrl;
+
     public News(String title, String imgUrl, String date, String detailsUrl) {
         this.title = title;
         this.imgUrl = imgUrl;

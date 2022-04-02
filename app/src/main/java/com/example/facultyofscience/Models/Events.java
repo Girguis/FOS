@@ -1,7 +1,8 @@
 package com.example.facultyofscience.Models;
 
 public class Events {
-    private String title,imgUrl,Date,detailsUrl;
+    private String title, imgUrl, Date, detailsUrl;
+
     public Events(String title, String imgUrl, String date, String detailsUrl) {
         this.title = title;
         this.imgUrl = imgUrl;
@@ -9,7 +10,9 @@ public class Events {
         this.detailsUrl = detailsUrl;
     }
 
-    public String getTitle() { return title; }
+    public String getTitle() {
+        return title;
+    }
 
     public void setTitle(String title) {
         this.title = title;

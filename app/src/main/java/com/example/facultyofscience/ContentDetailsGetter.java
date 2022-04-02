@@ -13,7 +13,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 class ContentDetailsGetter {
-    private String detailsUrl,selectQuery,detailsString;
+    private String detailsUrl, selectQuery, detailsString;
     private TextView detailsTxtView;
     private Activity activity;
 
@@ -24,17 +24,16 @@ class ContentDetailsGetter {
         this.activity = activity;
     }
 
-    public void execute()
-    {
+    public void execute() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Document doc= Jsoup.connect(detailsUrl).get();
-                    Elements data=doc.select(selectQuery);
-                    detailsString=String.valueOf(data);
-                    detailsString=detailsString.replaceAll("<img.*>","");
-                    detailsString=detailsString.replaceAll("<img.*/>","");
+                    Document doc = Jsoup.connect(detailsUrl).get();
+                    Elements data = doc.select(selectQuery);
+                    detailsString = String.valueOf(data);
+                    detailsString = detailsString.replaceAll("<img.*?>", "");
+                    detailsString = detailsString.replaceAll("<img.*?/>", "");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
