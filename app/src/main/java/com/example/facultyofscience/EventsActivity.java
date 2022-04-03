@@ -1,7 +1,6 @@
 package com.example.facultyofscience;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
@@ -21,7 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class EventsActivity extends AppCompatActivity {
-    private ArrayList<Events> events = new ArrayList<Events>();
+    private ArrayList<Events> events = new ArrayList<>();
     private RecyclerView recyclerView;
     private EventsAdapter eventsAdapter;
     private ProgressBar progressBar;
@@ -57,7 +56,6 @@ public class EventsActivity extends AppCompatActivity {
                             String imgUrl = data.select("div.event-img").select("img").eq(i).attr("src");
                             String title = data.select("h3").select("p").eq(i).text();
                             String detailsUrl = data.select("h3").select("a").eq(i).attr("href");
-                            Log.d("deatilsURl", "run: " + detailsUrl);
                             String date = data.select("div.event-date").eq(i).text();
                             events.add(new Events(title, imgUrl, date, detailsUrl));
                         }

@@ -7,7 +7,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,12 +37,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         eventsPage.setOnClickListener(this);
         announPage = findViewById(R.id.announPage);
         announPage.setOnClickListener(this);
+        notificationChannelCreate();
+        startBackgroundProcess();
+    }
+
+    private void notificationChannelCreate() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("NotificationChannel", "NotificationChannel", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manger = getSystemService(NotificationManager.class);
             manger.createNotificationChannel(channel);
         }
-        startBackgroundProcess();
     }
 
     private void startBackgroundProcess() {
@@ -86,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static boolean isInternetConnectionWorking(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        return (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED);
+        return (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnected() ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnected());
     }
 }
