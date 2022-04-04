@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startBackgroundProcess() {
-        Intent intent = new Intent(this, BackgroundService.class);
+        Intent intent = new Intent(MainActivity.this, BackgroundService.class);
         intent.setAction("BackgroundService");
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent, 0);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, 0, AlarmManager.INTERVAL_HOUR * 6, pendingIntent);
     }
