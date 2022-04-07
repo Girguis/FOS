@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.facultyofscience.Activities.News.NewsDetailsActivity;
+import com.example.facultyofscience.Activities.NoInternet.NoInternetConnectionActivity;
 import com.example.facultyofscience.Models.News;
 import com.example.facultyofscience.R;
 import com.squareup.picasso.Picasso;
@@ -68,14 +69,17 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
         @Override
         public void onClick(View view) {
-            int indx = getBindingAdapterPosition();
-            News forDetails = news.get(indx);
-            Intent intent = new Intent(context, NewsDetailsActivity.class);
-            intent.putExtra("title", forDetails.getTitle());
-            intent.putExtra("date", forDetails.getDate());
-            intent.putExtra("imgUrl", forDetails.getImgUrl());
-            intent.putExtra("detailsUrl", forDetails.getDetailsUrl());
-            context.startActivity(intent);
+            if (NoInternetConnectionActivity.isInternetConnectionWorking(context)) {
+                int indx = getBindingAdapterPosition();
+                News forDetails = news.get(indx);
+                Intent intent = new Intent(context, NewsDetailsActivity.class);
+                intent.putExtra("title", forDetails.getTitle());
+                intent.putExtra("date", forDetails.getDate());
+                intent.putExtra("imgUrl", forDetails.getImgUrl());
+                intent.putExtra("detailsUrl", forDetails.getDetailsUrl());
+                context.startActivity(intent);
+            } else
+                context.startActivity(new Intent(context, NoInternetConnectionActivity.class));
         }
     }
 }

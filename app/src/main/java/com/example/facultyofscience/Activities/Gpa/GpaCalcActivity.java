@@ -61,7 +61,9 @@ public class GpaCalcActivity extends AppCompatActivity {
                 else {
                     String grade = gradesList.getSelectedItem().toString();
                     String name = subName.getText().toString();
+                    subName.setText("");
                     int hours = Integer.parseInt(hoursTxt.getText().toString().isEmpty() ? "0" : hoursTxt.getText().toString());
+                    hoursTxt.setText("");
                     subjectGrades.add(new SubjectGrade(hours, grade, name));
                 }
                 if (subjectGrades.size() > 0) {

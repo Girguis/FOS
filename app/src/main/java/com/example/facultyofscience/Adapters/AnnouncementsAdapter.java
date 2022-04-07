@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.facultyofscience.Activities.Announcements.AnnouncementsDetailsActivity;
+import com.example.facultyofscience.Activities.NoInternet.NoInternetConnectionActivity;
 import com.example.facultyofscience.Models.Announcements;
 import com.example.facultyofscience.R;
 import com.squareup.picasso.Picasso;
@@ -65,13 +66,16 @@ public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdap
 
         @Override
         public void onClick(View view) {
-            int indx = getBindingAdapterPosition();
-            Announcements forDetails = announcements.get(indx);
-            Intent intent = new Intent(context, AnnouncementsDetailsActivity.class);
-            intent.putExtra("title", forDetails.getTitle());
-            intent.putExtra("imgUrl", forDetails.getImgUrl());
-            intent.putExtra("detailsUrl", forDetails.getDetailsUrl());
-            context.startActivity(intent);
+            if (NoInternetConnectionActivity.isInternetConnectionWorking(context)) {
+                int indx = getBindingAdapterPosition();
+                Announcements forDetails = announcements.get(indx);
+                Intent intent = new Intent(context, AnnouncementsDetailsActivity.class);
+                intent.putExtra("title", forDetails.getTitle());
+                intent.putExtra("imgUrl", forDetails.getImgUrl());
+                intent.putExtra("detailsUrl", forDetails.getDetailsUrl());
+                context.startActivity(intent);
+            } else
+                context.startActivity(new Intent(context, NoInternetConnectionActivity.class));
         }
     }
 }
