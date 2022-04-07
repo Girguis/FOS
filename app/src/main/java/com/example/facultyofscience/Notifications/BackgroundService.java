@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.facultyofscience.MainActivity;
+import com.example.facultyofscience.Activities.NoInternet.NoInternetConnectionActivity;
 
 public class BackgroundService extends BroadcastReceiver {
 
@@ -13,7 +13,7 @@ public class BackgroundService extends BroadcastReceiver {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if (MainActivity.isInternetConnectionWorking(context)) {
+                if (NoInternetConnectionActivity.isInternetConnectionWorking(context)) {
                     try {
                         NewsNotification.execute(context);
                         EventsNotification.execute(context);

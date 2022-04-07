@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/facultylogo"
@@ -12,34 +13,37 @@
         android:roundIcon="@mipmap/facultylogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.FacultyOfScience">
-
         <activity
-            android:name=".NoInternetConnectionActivity"
+            android:name=".Activities.SuggestionsAndComplaints.SuggestionsAndComplaints"
             android:exported="false" />
         <activity
-            android:name=".AnnouncementsDetailsActivity"
+            android:name=".Activities.NoInternet.NoInternetConnectionActivity"
             android:exported="false" />
         <activity
-            android:name=".AnnouncementsActivity"
+            android:name=".Activities.Announcements.AnnouncementsDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".EventsDetailsActivity"
+            android:name=".Activities.Announcements.AnnouncementsActivity"
             android:exported="false" />
         <activity
-            android:name=".EventsActivity"
+            android:name=".Activities.Events.EventsDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".NewsDetailsActivity"
+            android:name=".Activities.Events.EventsActivity"
             android:exported="false" />
         <activity
-            android:name=".GpaCalcActivity"
+            android:name=".Activities.News.NewsDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Gpa.GpaCalcActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
         <activity
-            android:name=".NewsActivity"
+            android:name=".Activities.News.NewsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,12 +51,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".Notifications.BackgroundService"
-            android:exported="true"
-            android:enabled="true">
+
+        <receiver
+            android:name=".Notifications.BackgroundService"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
-                <action android:name="BackgroundService"/>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="BackgroundService" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
     </application>

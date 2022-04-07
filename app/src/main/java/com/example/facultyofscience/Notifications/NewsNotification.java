@@ -3,7 +3,7 @@ package com.example.facultyofscience.Notifications;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.facultyofscience.NewsDetailsActivity;
+import com.example.facultyofscience.Activities.News.NewsDetailsActivity;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -28,8 +28,6 @@ public class NewsNotification {
             Method method = NewsNotification.class.getMethod("getIntentForNotification", Context.class);
             NotificationSender.checkForWebsiteUpdate(context, method, lastWebsiteTitle, "News", "خبر جديد", 1);
 
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

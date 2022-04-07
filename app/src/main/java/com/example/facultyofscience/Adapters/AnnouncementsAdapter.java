@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.facultyofscience.AnnouncementsDetailsActivity;
+import com.example.facultyofscience.Activities.Announcements.AnnouncementsDetailsActivity;
 import com.example.facultyofscience.Models.Announcements;
 import com.example.facultyofscience.R;
 import com.squareup.picasso.Picasso;

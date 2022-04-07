@@ -3,7 +3,7 @@ package com.example.facultyofscience.Notifications;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.facultyofscience.AnnouncementsDetailsActivity;
+import com.example.facultyofscience.Activities.Announcements.AnnouncementsDetailsActivity;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -17,7 +17,6 @@ public class AnnouncementsNotification {
     static String lastWebsiteTitle = "";
 
     public static void execute(Context context) {
-        String keyName = "Announcements";
         try {
             topDiv = (Jsoup.connect("https://science.asu.edu.eg/ar/announcements").get()).selectFirst("div.gallery-item");
             lastWebsiteTitle = topDiv.selectFirst("h3").text();
@@ -28,8 +27,6 @@ public class AnnouncementsNotification {
         try {
             Method method = AnnouncementsNotification.class.getMethod("getIntentForNotification", Context.class);
             NotificationSender.checkForWebsiteUpdate(context, method, lastWebsiteTitle, "Announcements", "اعلان جديد", 3);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

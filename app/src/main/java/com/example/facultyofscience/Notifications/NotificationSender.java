@@ -46,9 +46,7 @@ public class NotificationSender {
                 Intent notificationIntent = (Intent) method.invoke(null, parameters);
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, channelId, notificationIntent, 0);
                 NotificationSender.sendNotification(context, channelId, contentTitle, lastWebsiteTitle, pendingIntent);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InvocationTargetException e) {
+            } catch (IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }

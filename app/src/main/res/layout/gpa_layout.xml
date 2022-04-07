@@ -7,7 +7,7 @@
     android:background="@color/bgColor"
     android:layoutDirection="rtl"
     android:textDirection="rtl"
-    tools:context=".GpaCalcActivity">
+    tools:context=".Activities.Gpa.GpaCalcActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
