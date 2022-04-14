@@ -34,8 +34,7 @@ public class NewsDetailsActivity extends AppCompatActivity {
                 progressBar,
                 getIntent().getStringExtra("detailsUrl"),
                 "div.content",
-                detailsTxt,
-                this);
+                detailsTxt);
         cd.execute();
     }
 

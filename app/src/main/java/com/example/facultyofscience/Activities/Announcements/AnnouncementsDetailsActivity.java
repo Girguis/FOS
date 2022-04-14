@@ -32,8 +32,7 @@ public class AnnouncementsDetailsActivity extends AppCompatActivity {
                 progressBar,
                 getIntent().getStringExtra("detailsUrl"),
                 "div.about-desc",
-                detailsTxt,
-                this);
+                detailsTxt);
         cd.execute();
     }
 }

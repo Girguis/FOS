@@ -34,8 +34,7 @@ public class EventsDetailsActivity extends AppCompatActivity {
                 progressBar,
                 getIntent().getStringExtra("detailsUrl"),
                 "div.event-desc",
-                detailsTxt,
-                this);
+                detailsTxt);
         cd.execute();
     }
 }
