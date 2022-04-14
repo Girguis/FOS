@@ -1,5 +1,6 @@
 package com.example.facultyofscience.Activities.Gpa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,13 +25,14 @@ import java.util.ArrayList;
 
 public class GpaCalcActivity extends AppCompatActivity {
     EditText hoursTxt, oldGpa, oldGpaHours, subName;
-    TextView wantCalcCGpa, semsterGpa, cGpa, goToPdf;
+    TextView wantCalcCGpa, semsterGpa, cGpa, showGpaPdf;
     Button addBtn, calculateGPA;
     Spinner gradesList;
     RecyclerView enteredGradesLayout;
     Switch isCGpa;
     GridLayout gridLayout;
     ArrayList<SubjectGrade> subjectGrades = new ArrayList<SubjectGrade>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,15 @@ public class GpaCalcActivity extends AppCompatActivity {
         semsterGpa = findViewById(R.id.semesterGpa);
         cGpa = findViewById(R.id.cGpa);
         gridLayout = findViewById(R.id.gridLayout);
+        showGpaPdf = findViewById(R.id.showGpaPdf);
+        showGpaPdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GpaCalcActivity.this, PdfView.class);
+                intent.putExtra("fileName", "GpaCalcMethod.pdf");
+                startActivity(intent);
+            }
+        });
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

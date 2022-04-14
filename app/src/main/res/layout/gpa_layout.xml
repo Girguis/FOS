@@ -8,7 +8,6 @@
     android:layoutDirection="rtl"
     android:textDirection="rtl"
     tools:context=".Activities.Gpa.GpaCalcActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,12 +15,38 @@
         <include layout="@layout/bar_layout" />
 
         <LinearLayout
-            android:id="@+id/editTxtLayout"
+            android:id="@+id/howToCalc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bar"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="لمعرفة كيف يتم حساب GPA " />
+
+            <Button
+                android:id="@+id/showGpaPdf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="اضغط هنا"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editTxtLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/howToCalc"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
