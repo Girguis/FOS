@@ -56,12 +56,12 @@ public class AnnouncementsAdapter extends RecyclerView.Adapter<AnnouncementsAdap
             announItem.setOnClickListener(this);
         }
 
-        public void bind(Announcements events) {
+        public void bind(Announcements announcement) {
             titleView = announItem.findViewById(R.id.titleView);
-            titleView.setText(events.getTitle());
+            titleView.setText(announcement.getTitle());
             imageView = announItem.findViewById(R.id.imageView);
             imageView.setOnClickListener(this);
-            Picasso.get().load(events.getImgUrl()).into(imageView);
+            Picasso.get().load(announcement.getImgUrl()).into(imageView);
         }
 
         @Override

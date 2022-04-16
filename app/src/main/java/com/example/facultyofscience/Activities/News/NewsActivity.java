@@ -51,14 +51,23 @@ public class NewsActivity extends AppCompatActivity {
                     String url = "https://science.asu.edu.eg/ar/news";
                     try {
                         Document doc = Jsoup.connect(url).get();
-                        Elements data = doc.select("div.row.blog-inner");
-                        int count = data.size();
-                        for (int i = 0; i < count; i++) {
-                            String imgUrl = data.select("div.blog-images").select("img").eq(i).attr("src");
-                            String title = data.select("h4").select("a").eq(i).text();
-                            String detailsUrl = data.select("h4").select("a").eq(i).attr("href");
-                            String date = data.select("div.date").eq(i).text();
-                            news.add(new News(title, imgUrl, date, detailsUrl));
+                        int noOfPages = 1;
+                        Elements ele = doc.select("ul.pagination").select("li");
+                        if (ele.size() > 0)
+                            noOfPages = ele.size() - 2;
+
+                        for (int pageNo = 0; pageNo < noOfPages; pageNo++) {
+                            if (pageNo > 0)
+                                doc = Jsoup.connect(url + "?page=" + (pageNo + 1)).get();
+                            Elements data = doc.select("div.row.blog-inner");
+                            int count = data.size();
+                            for (int i = 0; i < count; i++) {
+                                String imgUrl = data.select("div.blog-images").select("img").eq(i).attr("src");
+                                String title = data.select("h4").select("a").eq(i).text();
+                                String detailsUrl = data.select("h4").select("a").eq(i).attr("href");
+                                String date = data.select("div.date").eq(i).text();
+                                news.add(new News(title, imgUrl, date, detailsUrl));
+                            }
                         }
                     } catch (IOException e) {
                         e.printStackTrace();

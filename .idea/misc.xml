@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2175" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/drawable/barbackground.xml" value="0.2235" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/drawable/gradient.xml" value="0.2" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2175" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.164453125" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/activity_fullscreen.xml" value="0.1" />
@@ -15,13 +17,13 @@
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/activity_test.xml" value="0.17999144933732364" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/activity_test_avtivity.xml" value="0.17999144933732364" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/annnouncements_details_layout.xml" value="0.2" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/announcements_item.xml" value="0.4" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/announcements_layout.xml" value="0.2" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/bar_layout.xml" value="0.25" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/announcements_item.xml" value="0.536" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/announcements_layout.xml" value="0.4" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/bar_layout.xml" value="0.4" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/content_scrolling.xml" value="0.17999144933732364" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/event_item.xml" value="0.17999144933732364" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/events_details_layout.xml" value="0.2" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/events_layout.xml" value="0.17999144933732364" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/event_item.xml" value="0.4" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/events_details_layout.xml" value="0.4" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/events_layout.xml" value="0.4" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/gpa_layout.xml" value="0.45595238095238094" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/gpa_list_item.xml" value="0.3463157894736842" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/image_item.xml" value="0.17999144933732364" />
@@ -30,7 +32,7 @@
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/news_item.xml" value="0.6247288503253796" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/news_layout.xml" value="0.17999144933732364" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/no_internet_connection.xml" value="0.6505576208178439" />
-        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/no_internet_connection_layout.xml" value="0.22580645161290322" />
+        <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/no_internet_connection_layout.xml" value="0.4" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/pdf_view_layout.xml" value="0.33515625" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/pdf_viewer_layout.xml" value="0.176" />
         <entry key="..\:/material/3rd year/2nd term/Advanced Web(Andriod)/Lab/FacultyOfScience/app/src/main/res/layout/suggestions_and_complaints_layout.xml" value="0.2916666666666667" />
